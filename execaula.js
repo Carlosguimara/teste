@@ -6,8 +6,8 @@ soma= ++soma
 console.log('soma=',soma);
 soma*=3
 console.log('soma=',soma);
-var booleano=true
-console.log('booleano=',booleano);
+var fazsol=true
+console.log('booleano=',fazsol);
 var comida=['Arroz','Feijão','Ovo'];
 console.log(comida[1]);
 console.log(soma === minhaVar)
