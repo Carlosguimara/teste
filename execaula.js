@@ -16,3 +16,7 @@ console.log(divisao(10,2))
 function divisao(a,b){
     return a/b
 }
+
+
+
+
