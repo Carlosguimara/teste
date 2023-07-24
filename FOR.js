@@ -60,7 +60,17 @@ for (cont=1;cont<=100; cont++) {
 
 //Calcule a média de uma lista de números utilizando for.
 
+var lista, tamlist, cont, media;
+lista = [10, 20, 60];
+tamlist = lista.length;
+cont = 1;
+media = 0;
+for (cont=1; cont<=tamlist; cont++) {
+  media = media + lista[(cont - 1)];
+}
+console.log(media / tamlist);
 
+//Calcule o fatorial de um número utilizando for.
 
 
 
