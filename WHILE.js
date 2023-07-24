@@ -90,7 +90,7 @@ while (cont <= tamlist) {
   media = media + lista[(cont - 1)];
   cont = cont + 1;
 }
-window.alert(media / tamlist);
+console.log(media / tamlist);
 
 //Calcule o fatorial de um número.
 var fat, cont;
@@ -105,7 +105,7 @@ console.log(n,'! =',fat);
 
 //Imprima os números de 10 a 1 em ordem decrescente.
 var n=10;
- while (n>0){
+ while (n>1){
    console.log(n);
    n= --n
-   
+ }   
