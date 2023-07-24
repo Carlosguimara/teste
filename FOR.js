@@ -72,7 +72,16 @@ console.log(media / tamlist);
 
 //Calcule o fatorial de um número utilizando for.
 
+var fat, cont;
+n=5;
+fat=n;
+for (cont=1; cont<n; cont++) {
+  fat=fat*cont;
+  }
+console.log(n,'! =',fat);
 
+
+//Imprima os elementos de um array utilizando for.
 
 
 
