@@ -105,7 +105,7 @@ console.log(n,'! =',fat);
 
 //Imprima os números de 10 a 1 em ordem decrescente.
 var n=10;
- while (n>1){
+ while (n>0){
    console.log(n);
    n= --n
  }   
