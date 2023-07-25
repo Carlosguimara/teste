@@ -1,4 +1,4 @@
-// instalar no node npm install readline-sync para usar prompt
+// instalar no node npm install readline-sync para usar question (prompt)
 
 var carta1, carta2, soma;
 carta1=9;
