@@ -10,12 +10,14 @@ cb3=1;
 cb4=7;
 somab=cb1+cb2+cb3+cb4;
 if (somaj>21 || somab>21 ){
-    switch( somaj>21)
+    switch(somaj>21){
     case true;
        console.log(`A soma de suas cartas foi ${somaj}, VOCÊ PERDEU !!!`)
        break;
     default:
-       console.log(`A soma do banco foi ${somab}, BANCO PERDEU !!!`)}
+       console.log(`A soma do banco foi ${somab}, BANCO PERDEU !!!`)
+    }   
+}   
 elseif (somaj > somab){
     console.log(`Você ${somaj}, Banco ${somab}, VOCÊ GANHOU !!!`)}
 else{
