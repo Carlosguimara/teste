@@ -103,5 +103,21 @@ console.log('a soma dos digitos do numero',numero,'é',soma)
 
 //Imprima os números primos de 1 a 50 utilizando for.
 
+var cont;
+var div=2;
+var prim=0;
+for (cont=1;cont<=50; cont++) {
+  while (div<cont && prim==0) {
+  if (cont%div==0) {
+    prim= ++prim;    }
+   div= ++div;  
+}
+if (prim==0){
+  console.log(cont)}
+div=2;
+prim=0;
+}
+
+
 
 
