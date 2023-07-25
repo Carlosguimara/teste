@@ -25,3 +25,11 @@ if (n2%3 === 0){
 if (n2%5 === 0){ 
         console.log(n1,' É divisivel por 5')
 }
+
+//A depender da idade, verifique se a pessoa não pode dirigir, pode dirigir com autorização, ou pode dirigir
+var idade=18;
+if (idade >= 18){
+    console.log('O usuário tem',idade,'anos e está apto a dirigir')
+   }   else if (idade>=16){console.log('O usuário tem',idade,'anos e pode dirigir com autorização')}
+       else{ console.log('O usuário tem',idade,'anos e não pode dirigir')
+}      
