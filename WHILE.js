@@ -62,10 +62,10 @@ else {
 //Faça o usuário digitar sua senha até que seja digitada a senha correta.
 
 var senha='senha1234@'
-var digit=window.prompt('Digite sua senha')
+var digit=prompt('Digite sua senha')
 while (digit != senha){
-      digit=window.prompt('Senha não confere !, digite novamente sua senha ')}
-window.alert(' Senha confirmada');
+      digit=prompt('Senha não confere !, digite novamente sua senha ')}
+alert(' Senha confirmada');
 
 //Imprima os múltiplos de 3 de 1 a 30.
 
