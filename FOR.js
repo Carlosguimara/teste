@@ -83,5 +83,25 @@ console.log(n,'! =',fat);
 
 //Imprima os elementos de um array utilizando for.
 
+var lista = [10, 20, 60];
+var cont = 1;
+for (cont=1; cont<=lista.length; cont++) {
+  console.log(lista[(cont - 1)]);
+}
+
+
+//Calcule a soma dos dígitos de um número utilizando for.
+
+var numero, soma, str, cont;
+numero = 12354;
+soma=0;
+str = numero.toString();
+for (cont = 0; cont < str.length; cont++) {
+  soma += parseInt(str.charAt(cont),10)
+}
+console.log('a soma dos digitos do numero',numero,'é',soma)
+
+//Imprima os números primos de 1 a 50 utilizando for.
+
 
 
