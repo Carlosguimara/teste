@@ -24,5 +24,5 @@ switch (numeros.includes(n)) {
         break;
     default:
         console.log(`${n} não está incluido no Array`);
-}
+} 
 
