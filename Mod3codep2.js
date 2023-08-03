@@ -44,7 +44,7 @@ for (let i=0; i<tam ; i++){
 //impressão da Matriz após inclusão dos dados
 
 console.log(zooMatriz)  
-}
+
 
 /********************** FIM DO PROGRAMA *************************/
 
