@@ -145,7 +145,13 @@ mostrarNumeros(inicio,final)
 /*8-Escreva uma função chamada contarVogais que aceite uma string como parâmetro e conte quantas 
     vogais (a, e, i, o, u) ela contém. Exiba o resultado no console.*/
 
-
+    const readline = require("readline-sync")
+    let frase8 = readline.question('Digite uma frase qualquer - ')
+    let letra = "a"
+    
+    let ocorrencias = frase8.split(letra).length -1
+    
+    console.log(ocorrencias)
 
         /*9-Crie uma função chamada imprimirTabuada que aceite um número como entrada e exiba a tabuada desse número 
             de 1 a 10 no console.*/
