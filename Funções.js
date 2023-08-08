@@ -61,8 +61,8 @@ function mostrarNumeros(inic,fim) {
 
 mostrarNumeros(inicio,final)
 
-//4-Escreva uma função chamada verificarPar que aceite um número como entrada
-    e exiba no console se o número é par ou não
+/*4-Escreva uma função chamada verificarPar que aceite um número como entrada
+    e exiba no console se o número é par ou não*/
 
     const readline = require("readline-sync")
     let num4=parseInt(readline.question(`Digite um numero - `))
@@ -78,8 +78,8 @@ mostrarNumeros(inicio,final)
     
     verificarPar(num4)
 
-    //5-Crie uma função chamada imprimirLista que aceite um array como parametro
-        e que exiba cada elemento desse array no console, um por um
+/*5-Crie uma função chamada imprimirLista que aceite um array como parametro
+    e que exiba cada elemento desse array no console, um por um*/
 
         let meuArray=[1,2,"E","D"]
 
@@ -94,18 +94,56 @@ mostrarNumeros(inicio,final)
         
         imprimirLista(meuArray)
 
-        /*6-Escreva uma função chamada calcularMedia que receba um array de números como parâmetro 
-          e calcule a média desses números. Não é necessário exibir o resultado, apenas retorne o valor da média. */
+/*6-Escreva uma função chamada calcularMedia que receba um array de números como parâmetro 
+    e calcule a média desses números. Não é necessário exibir o resultado, apenas retorne o valor da média. */
 
+    const readline = require("readline-sync")
+    const meuArray6 = []
+    let num6, fim6
+    
+    //Pede ao usario que digite os itens a serem incluidos um a um 
+    do {
+        fim6 = readline.question('Digite * para encerrar ou enter para continuar - ')
+        if (fim6 == "*" ){
+            break
+        }
+        num6 = parseInt(readline.question('Digite um numero a ser incluido - '))
+        meuArray6.push(num6)
+    } while (fim6 !='*');
+        
+    console.log(meuArray6)
+    
+    //calcula o amanho do array e se tamanho maior que Zero, chama a função para calcular a média.
+    let tam6=meuArray6.length
+    if (tam6 >1){
+        calcularMedia(meuArray6,tam6)
+        }
+    
+    // define função que calcua a média e divulga o resultado
+    function calcularMedia(array,tam) {  
+                let soma=array.reduce(function(acumulado,atual){
+                    return acumulado+atual;
+                })
+                let media=soma/tam
+                console.log(`Média - ${media.toFixed(2)}`)
+    }
+    
+/*7-Crie uma função chamada maiorNumero que receba um array de números como parâmetro e exiba o maior número 
+    presente no array no console.*/
 
+    let meuArray7=[1,2,10,8,25,23]
 
-        /*7-Crie uma função chamada maiorNumero que receba um array de números como parâmetro e exiba o maior número 
-            presente no array no console.*/
+    function valorMaximo(array) { 
+        //usa a função (método ?) Math.Max() para descobrir o maior valor do array
+        let maximo = Math.max(...array)
+        console.log(meuArray7)
+        console.log(`O maior valor deste array é ${maximo}`)
+    }
+                   
+    valorMaximo(meuArray7)
 
-
-
-        /*8-Escreva uma função chamada contarVogais que aceite uma string como parâmetro e conte quantas 
-            vogais (a, e, i, o, u) ela contém. Exiba o resultado no console.*/
+/*8-Escreva uma função chamada contarVogais que aceite uma string como parâmetro e conte quantas 
+    vogais (a, e, i, o, u) ela contém. Exiba o resultado no console.*/
 
 
 
