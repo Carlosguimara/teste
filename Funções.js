@@ -145,23 +145,41 @@ mostrarNumeros(inicio,final)
 /*8-Escreva uma função chamada contarVogais que aceite uma string como parâmetro e conte quantas 
     vogais (a, e, i, o, u) ela contém. Exiba o resultado no console.*/
 
-    const readline = require("readline-sync")
-    let frase8 = readline.question('Digite uma frase qualquer - ')
-    let letra = "a"
-    
-    let ocorrencias = frase8.split(letra).length -1
-    
-    console.log(ocorrencias)
+ //Pede ao usuário para digitar qualquer frase
+ const readline = require("readline-sync")
+ let frase8 = readline.question('Digite uma frase qualquer em minusculas e sem acento - ')
+ 
+// converte todas as letras para minusculas 
+ fraseconvert8=frase8.toLowerCase()
+ 
+// separa todos os acentos
+ frasenormalizada8=fraseconvert8.normalize("NFD")
+ 
+//Funcão para contar as letras usando split
+ function contaLetras(frase,letra) {
 
-        /*9-Crie uma função chamada imprimirTabuada que aceite um número como entrada e exiba a tabuada desse número 
-            de 1 a 10 no console.*/
+     let ocorrencias = frasenormalizada8.split(letra).length -1
+     console.log(`Nesta frase a letra '${letra}' aparece ${ocorrencias} vezes`)
+ } 
+
+//chama a função contaLetras para cada vogal    
+ contaLetras(frasenormalizada8,"a")
+ contaLetras(frasenormalizada8,"e")
+ contaLetras(frasenormalizada8,"i")
+ contaLetras(frasenormalizada8,"o")
+ contaLetras(frasenormalizada8,"u")
+ 
+
+
+/*9-Crie uma função chamada imprimirTabuada que aceite um número como entrada e exiba a tabuada desse número 
+    de 1 a 10 no console.*/
 
 
 
-        /*10-Escreva uma função chamada verificarPrimo que receba um número como parâmetro e exiba no console se o 
-             número é primo ou não.*/
+/*10-Escreva uma função chamada verificarPrimo que receba um número como parâmetro e exiba no console se o 
+     número é primo ou não.*/
 
-             
+ //teste            
 
 
 
