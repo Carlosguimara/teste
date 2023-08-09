@@ -174,47 +174,61 @@ mostrarNumeros(inicio,final)
 /*9-Crie uma função chamada imprimirTabuada que aceite um número como entrada e exiba a tabuada desse número 
     de 1 a 10 no console.*/
 
-/*
-VAR cont,tab;inteiro
-
-INICIO
-
-tab <- 1
-
-ENQUANTO (tab <> 0) FACA
-   ESCREVA("Informe o valor da tabuada desejada - digite 0 para encerrar")
-   LEIA(tab)
-   SE (tab <> 0)
-      cont <-1
-      PARA cont <-1 ATÉ 10 FAÇA
-           ESCREVA(tab,"*",cont,"=",tab*cont)
-           FIMPARA
-   FIMSE
-FIMENQUANTO
-ESCREVA("Espero ter lhe ajudado, até breve !")
-FIMALGORITMO
-*/
-
+    const readline = require("readline-sync")
+    let operacao= readline.question('Digite o Tipo de Operação (+ ,- ,/ , *) - ')
+    let tabDe = parseInt(readline.question('Digite o numero base para a Tabuada - '))
+    
+    
+    function imprimirTabuada(tab,op,ct){
+        switch (op){
+            case "+" :
+               console.log(`${tab} ${op} ${ct} = ${tab+ct}`)
+               break
+            case "-" :
+                console.log(`${tab} ${op} ${ct} = ${tab-ct}`)
+               break
+            case "/" :
+                console.log(`${tab} ${op} ${ct} = ${tab/ct}`)
+               break
+            case "*" :
+                console.log(`${tab} ${op} ${ct} = ${tab*ct}`)
+                break
+            default :
+                console.log(`Operação inválida - "${op}"`)
+                cont=11
+        }
+        
+    }
+    
+    for (cont=1; cont<=10; ++cont){
+            imprimirTabuada(tabDe,operacao,cont)
+    }
+    
 /*10-Escreva uma função chamada verificarPrimo que receba um número como parâmetro e exiba no console se o 
      número é primo ou não.*/
 
  /* 
  //Verifique se um número é primo.
-var div=2;
-var n=17;
-var cont=0;
-do {
-  if (n%div==0) {
-    cont= ++cont;    }
-   div= ++div;  
-} while (div<n && cont==0);
-if (cont !=0){
-  console.log(n,'não é um numero primo')}
-else {
-  console.log(n,'é um número primo')}
 
-*/      
+let num10= parseInt(readline.question(`digite um número inteiro para verificarmos se ele é um numero primo - `))
 
+function verificarPrimo(num){
+    let cont=0, div=2
+    do {
+        if (num%div==0) {
+            cont= ++cont;    }
+            div= ++div;  
+    }  while (div<num && cont==0);
+    if (cont !=0){
+        console.log(num,'não é um numero primo')
+        
+    }
+    else {
+        console.log(num,'é um número primo')
+        
+    }
+}
 
+verificarPrimo(num10)
 
 
