@@ -70,3 +70,33 @@ Digite a idade do Cachorro -9
   [ 'Cachorro', 'Canina', '9' ]
 ]
 */
+
+/* Exemplo de manipulação e impressão de uma matriz bidimensional 
+por Fábio Bezerra de Andrade
+
+function animal( nome , especie , idade){
+    this.nome = nome;
+    this.especie = especie;
+    this.idade = idade;
+    }
+
+let tigreBengala = new animal('Richard Parker' , 'Panthera tigris tigris' , 9);
+let touro = new animal('Huracan' , 'Bos taurus' , 6);
+let cavalo = new animal('Pé de pano' , 'Equus ferus' , 11);
+
+let animais = [ tigreBengala , touro , cavalo ];
+
+console.table(animais);
+
+
+saida de impressão
+
+┌─────────┬──────────────────┬──────────────────────────┬───────┐
+│ (index) │       nome       │         especie          │ idade │
+├─────────┼──────────────────┼──────────────────────────┼───────┤
+│    0    │ 'Richard Parker' │ 'Panthera tigris tigris' │   9   │
+│    1    │    'Huracan'     │       'Bos taurus'       │   6   │
+│    2    │   'Pé de pano'   │      'Equus ferus'       │  11   │
+└─────────┴──────────────────┴──────────────────────────┴───────┘
+
+*/
