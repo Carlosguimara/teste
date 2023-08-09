@@ -174,12 +174,46 @@ mostrarNumeros(inicio,final)
 /*9-Crie uma função chamada imprimirTabuada que aceite um número como entrada e exiba a tabuada desse número 
     de 1 a 10 no console.*/
 
+/*
+VAR cont,tab;inteiro
 
+INICIO
+
+tab <- 1
+
+ENQUANTO (tab <> 0) FACA
+   ESCREVA("Informe o valor da tabuada desejada - digite 0 para encerrar")
+   LEIA(tab)
+   SE (tab <> 0)
+      cont <-1
+      PARA cont <-1 ATÉ 10 FAÇA
+           ESCREVA(tab,"*",cont,"=",tab*cont)
+           FIMPARA
+   FIMSE
+FIMENQUANTO
+ESCREVA("Espero ter lhe ajudado, até breve !")
+FIMALGORITMO
+*/
 
 /*10-Escreva uma função chamada verificarPrimo que receba um número como parâmetro e exiba no console se o 
      número é primo ou não.*/
 
- //teste            
+ /* 
+ //Verifique se um número é primo.
+var div=2;
+var n=17;
+var cont=0;
+do {
+  if (n%div==0) {
+    cont= ++cont;    }
+   div= ++div;  
+} while (div<n && cont==0);
+if (cont !=0){
+  console.log(n,'não é um numero primo')}
+else {
+  console.log(n,'é um número primo')}
+
+*/      
 
 
 
