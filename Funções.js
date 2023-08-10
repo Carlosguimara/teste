@@ -339,7 +339,7 @@ um parâmetro estilo para o estilo da mensagem (por exemplo, "normal", "negrito"
 um valor padrão de estilo sendo "normal". A função deve exibir no console o texto fornecido com o 
 estilo especificado.
 /*
-
+/*
 const readline = require("readline-sync")
 let texto = readline.question('Digite o texto - ')
 let estilo = readline.question('Digite o estilo desejado (normal, negrito ou itálico) - ')
@@ -351,3 +351,80 @@ let estilo = readline.question('Digite o estilo desejado (normal, negrito ou it�
  mesagemPersonalizada(texto,estilo)
  mesagemPersonalizada(texto)
 */
+
+
+/*****Funçoes com Return */
+
+//Exercício Avulso
+/*
+function criarMensagemDeSaudacao(nome,saudacao='Hello'){
+    const mensagem = `${saudacao} ${nome}`
+    return mensagem;
+    
+}
+
+let mensagemDeSaudacao= criarMensagemDeSaudacao("Ana")
+console.log(mensagemDeSaudacao)
+
+mensagemDeSaudacao= criarMensagemDeSaudacao("Ana","Bom dia")
+console.log(mensagemDeSaudacao)
+*/
+
+/* SLIDES LPM01A05 sl 39
+1-Crie uma função chamada somar que aceite dois números como parâmetros e retorne a soma deles.
+
+
+const readline = require("readline-sync")
+let num1 = parseInt(readline.question('Digite um número inteiro - '))
+let num2 = parseInt(readline.question('Digite outro número inteiro - '))
+
+function somaNumeros(n1,n2){
+    let soma=n1+n2
+    return soma;
+}
+
+console.log(`${num1}+${num2}=${somaNumeros(num1,num2)}`)
+
+
+2-Escreva uma função chamada ehPar que aceite um número como parâmetro e retorne true se o número for par 
+e false caso contrário.
+
+
+const readline = require("readline-sync")
+let num = parseInt(readline.question('Digite um número inteiro - '))
+let resp
+function ehPar(n){
+    return n%2==0;
+}
+
+if (ehPar(num)){
+    resp=`${num} é par`
+    }else{
+        resp=`${num} é impar`
+    }
+   
+console.log(resp)
+
+
+3-Crie uma função chamada maiorNumero que receba três números como parâmetros e retorne o maior deles.
+##### NÃO ESTÁ FUNCIONANDO ####
+const readline = require("readline-sync")
+let num1 = parseFloat(require.question("Digite o 1° número inteiro - "))
+let num2 = parseInt(require.question("Digite o 2° número inteiro - "))
+let num3 = parseInt(require.question("Digite o 3° número inteiro - "))
+
+let entrada=[num1,num2,num3]
+
+function maiorNumero(ent){
+    return maior=Math.max.apply(null,ent)
+}
+
+console.log(`o maior numero é ${maiorNumero(entrada)`)
+    
+
+
+4-Escreva uma função chamada calcularIMC que receba o peso e a altura de uma pessoa como parâmetros e 
+retorne o índice de massa corporal (IMC) calculado.
+*/
+
+
