@@ -408,19 +408,22 @@ console.log(resp)
 
 3-Crie uma função chamada maiorNumero que receba três números como parâmetros e retorne o maior deles.
 ##### NÃO ESTÁ FUNCIONANDO ####
-const readline = require("readline-sync")
-let num1 = parseFloat(require.question("Digite o 1° número inteiro - "))
-let num2 = parseInt(require.question("Digite o 2° número inteiro - "))
-let num3 = parseInt(require.question("Digite o 3° número inteiro - "))
 
-let entrada=[num1,num2,num3]
+/*
+const readline = require("readline-sync")
+let num1 = parseFloat(readline.question("Digite o 1° número inteiro - "))
+let num2 = parseInt(readline.question("Digite o 2° número inteiro - "))
+let num3 = parseInt(readline.question("Digite o 3° número inteiro - "))
+
+const entrada=[num1,num2,num3]
+console.log(entrada)
 
 function maiorNumero(ent){
-    return maior=Math.max.apply(null,ent)
+    return (maior=Math.max.apply(null,ent))
 }
 
-console.log(`o maior numero é ${maiorNumero(entrada)`)
-    
+console.log(`o maior numero é ${maiorNumero(entrada)}`)
+*/
 
 
 4-Escreva uma função chamada calcularIMC que receba o peso e a altura de uma pessoa como parâmetros e 
