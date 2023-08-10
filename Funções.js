@@ -416,7 +416,6 @@ let num2 = parseInt(readline.question("Digite o 2° número inteiro - "))
 let num3 = parseInt(readline.question("Digite o 3° número inteiro - "))
 
 const entrada=[num1,num2,num3]
-console.log(entrada)
 
 function maiorNumero(ent){
     return (maior=Math.max.apply(null,ent))
@@ -425,9 +424,22 @@ function maiorNumero(ent){
 console.log(`o maior numero é ${maiorNumero(entrada)}`)
 */
 
-
+/*
 4-Escreva uma função chamada calcularIMC que receba o peso e a altura de uma pessoa como parâmetros e 
 retorne o índice de massa corporal (IMC) calculado.
+*/
+
+
+/*
+const leiauser = require("readline-sync")
+let peso = parseFloat(leiauser.question("Digite o seu peso exato - "))
+let altura = parseFloat(leiauser.question("Digite o sua altura exata em metros - "))
+
+function calcularIMC(pes,alt){
+    return (IMC=pes/(alt^2))
+}
+
+console.log(`o seu peso é ${peso}, altura ${altura} e seu IMC é ${calcularIMC(peso,altura).toFixed(1)}`)
 */
 
 
