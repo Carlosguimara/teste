@@ -1,5 +1,6 @@
 
 //1-Crie uma funçaõ chamada saudação que exiba a mensagem "Olá, mundo !" no console quando for chamada.
+/*
 function exibirSaudacao() {
     console.log("Olá Mundo !"); 
  }
@@ -32,8 +33,9 @@ function exibirSaudacao(mens, dia,mes) {
 
 exibirSaudacao(mensagem1,diahoje,meshoje)
 
+*/
 //2-Escreva uma função chamada dobro que aceite um parametro num e exiba o dobro deste numero na console
-
+/*
 const readline = require("readline-sync")
 let num2=parseInt(readline.question(`Digite um número - `))
 
@@ -42,11 +44,11 @@ function calcularDobro(num) {
 }
 
 calcularDobro(num2)
-
+*/
 /*3-Crie uma funçao chamada mostrarNumeros que receba dois parametros, inicio e fim.
     Essa função deve exibir todos os numeros inteiros no intervalo de inicio e fim
     (inclusive), no console */
-
+/*
     const readline = require("readline-sync")
 let inicio=parseInt(readline.question(`Digite um numero inicial - `))
 let final=parseInt(readline.question(`Digite um numero final - `))
@@ -60,10 +62,10 @@ function mostrarNumeros(inic,fim) {
 }
 
 mostrarNumeros(inicio,final)
-
+*/
 /*4-Escreva uma função chamada verificarPar que aceite um número como entrada
     e exiba no console se o número é par ou não*/
-
+/*
     const readline = require("readline-sync")
     let num4=parseInt(readline.question(`Digite um numero - `))
     
@@ -77,10 +79,10 @@ mostrarNumeros(inicio,final)
     }
     
     verificarPar(num4)
-
+*/
 /*5-Crie uma função chamada imprimirLista que aceite um array como parametro
     e que exiba cada elemento desse array no console, um por um*/
-
+/*
         let meuArray=[1,2,"E","D"]
 
         function imprimirLista(array) {  
@@ -93,10 +95,10 @@ mostrarNumeros(inicio,final)
         }
         
         imprimirLista(meuArray)
-
+*/
 /*6-Escreva uma função chamada calcularMedia que receba um array de números como parâmetro 
     e calcule a média desses números. Não é necessário exibir o resultado, apenas retorne o valor da média. */
-
+/*
     const readline = require("readline-sync")
     const meuArray6 = []
     let num6, fim6
@@ -127,10 +129,10 @@ mostrarNumeros(inicio,final)
                 let media=soma/tam
                 console.log(`Média - ${media.toFixed(2)}`)
     }
-    
+  */  
 /*7-Crie uma função chamada maiorNumero que receba um array de números como parâmetro e exiba o maior número 
     presente no array no console.*/
-
+/*
     let meuArray7=[1,2,10,8,25,23]
 
     function valorMaximo(array) { 
@@ -141,10 +143,10 @@ mostrarNumeros(inicio,final)
     }
                    
     valorMaximo(meuArray7)
-
+*/
 /*8-Escreva uma função chamada contarVogais que aceite uma string como parâmetro e conte quantas 
     vogais (a, e, i, o, u) ela contém. Exiba o resultado no console.*/
-
+/*
  //Pede ao usuário para digitar qualquer frase
  const readline = require("readline-sync")
  let frase8 = readline.question('Digite uma frase qualquer em minusculas e sem acento - ')
@@ -169,11 +171,11 @@ mostrarNumeros(inicio,final)
  contaLetras(frasenormalizada8,"o")
  contaLetras(frasenormalizada8,"u")
  
-
+*/
 
 /*9-Crie uma função chamada imprimirTabuada que aceite um número como entrada e exiba a tabuada desse número 
     de 1 a 10 no console.*/
-
+/*
     const readline = require("readline-sync")
     let operacao= readline.question('Digite o Tipo de Operação (+ ,- ,/ , *) - ')
     let tabDe = parseInt(readline.question('Digite o numero base para a Tabuada - '))
@@ -203,7 +205,7 @@ mostrarNumeros(inicio,final)
     for (cont=1; cont<=10; ++cont){
             imprimirTabuada(tabDe,operacao,cont)
     }
-    
+  */  
 /*10-Escreva uma função chamada verificarPrimo que receba um número como parâmetro e exiba no console se o 
      número é primo ou não.*/
 
@@ -232,3 +234,78 @@ function verificarPrimo(num){
 verificarPrimo(num10)
 
 
+// VALORES PADRÂO ********
+
+/*
+1-Crie uma função chamada saudacao que aceita um parâmetro nome para uma pessoa e exiba no console 
+a saudação "Olá, [nome]!" utilizando um valor padrão para nome caso nenhum seja fornecido.
+*/
+
+/*
+function exibirSaudacao(nome,saudacao="Hello"){
+    console.log(`${saudacao} ${nome} !!!`)
+}
+let aluno="José"
+let msg="Bom dia"
+
+exibirSaudacao(aluno)
+// exibe Hello José !!!
+
+exibirSaudacao(aluno,msg)
+// exibe Bom dia José !
+*/
+
+
+/*
+2-Escreva uma função chamada calculadora que receba dois números (num1 e num2) e um operador matemático (operacao) 
+como parâmetros. A função deve realizar a operação matemática entre 
+num1 e num2 (por exemplo, adição, subtração, multiplicação, divisão) com um valor padrão de operação sendo "+".
+
+/*
+const readline = require("readline-sync")
+    let operacao= readline.question('Digite o Tipo de Operação (+ ,- ,/ , *) - ')
+    let num01 = parseInt(readline.question('Digite o 1° número - '))
+    let num02 = parseInt(readline.question('Digite o 2° número - ')) 
+    
+    function imprimirTabuada(num1,op='+',num2){
+        switch (op){
+            case "+" :
+               console.log(`${num1} ${op} ${num2} = ${num1+num2}`)
+               break
+            case "-" :
+               console.log(`${num1} ${op} ${num2} = ${num1-num2}`)
+               break
+            case "/" :
+               console.log(`${num1} ${op} ${num2} = ${num1/num2}`)
+               break
+            case "*" :
+               console.log(`${num1} ${op} ${num2} = ${num1*num2}`)
+                break
+            default :
+               console.log(`operação invalida`)
+                
+        }
+        
+    }
+    
+imprimirTabuada(num01,operacao,num02)
+
+*/
+
+/*
+3-Crie uma função chamada contagemRegressiva que aceite um parâmetro inicio para iniciar a contagem regressiva. 
+A função deve exibir no console uma contagem regressiva a partir do número fornecido até 1, utilizando um valor 
+padrão de início igual a 10.
+
+/*
+function contagemRegressiva(start="10"){
+    for (cont=start; cont>=0; cont--){
+        console.log(cont)
+    }
+}
+    
+ let st=15 
+ 
+contagemRegressiva()   
+contagemRegressiva(st)
+*/
