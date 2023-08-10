@@ -331,3 +331,23 @@ const readline = require("readline-sync")
  apresentacao(nome)
  apresentacao()
 */
+
+
+/*
+2-Crie uma função chamada mensagemPersonalizada que receba um parâmetro texto para uma mensagem e 
+um parâmetro estilo para o estilo da mensagem (por exemplo, "normal", "negrito", "itálico"), com 
+um valor padrão de estilo sendo "normal". A função deve exibir no console o texto fornecido com o 
+estilo especificado.
+/*
+
+const readline = require("readline-sync")
+let texto = readline.question('Digite o texto - ')
+let estilo = readline.question('Digite o estilo desejado (normal, negrito ou itálico) - ')
+
+ function mesagemPersonalizada(msg,est="normal"){
+     console.log(`O texto "${msg}" está em estilo ${est}`)
+ }
+ 
+ mesagemPersonalizada(texto,estilo)
+ mesagemPersonalizada(texto)
+*/
