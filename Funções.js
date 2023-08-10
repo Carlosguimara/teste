@@ -309,3 +309,25 @@ function contagemRegressiva(start="10"){
 contagemRegressiva()   
 contagemRegressiva(st)
 */
+
+/*
+1-Escreva uma função chamada apresentacao que aceite três parâmetros: nome, idade e profissao. 
+A função deve exibir no console uma mensagem de apresentação no formato "Olá, eu sou [nome],
+tenho [idade] anos e sou [profissao].", utilizando valores padrão para os parâmetros caso nenhum seja fornecido. 
+*/
+
+/*
+const readline = require("readline-sync")
+ let nome = readline.question('Digite seu nome -')
+ let idade = readline.question('Digite sua idade -')
+ let profissao = readline.question('Digite sua profissão - ')
+ 
+ function apresentacao(nom="Fulano",id="16",prof="estudante"){
+     console.log(`Meu nome é ${nom}, tenho ${id} anos e sou ${prof}`)
+ }
+ 
+ apresentacao(nome,idade,profissao)
+ apresentacao(nome,idade)
+ apresentacao(nome)
+ apresentacao()
+*/
