@@ -1,100 +1,97 @@
-class Pessoas{
-}
-class PessoasComFilhos{
+class Pessoa{
+    constructor(Nome, Idade, Filho){
+        this.Nome = Nome;
+        this.Idade = Idade;
+        this.Filho = null;
+        this.proximo = null;
+    }
 }
 
-class ListaPessoas{
+class ListaPessoa{
     constructor(){
-        this.prim = null;
+        this.cabeca = null;
     }
 
-    addFirst(Nome, Idade){
-        const newNo = new Pessoas(Nome, Idade);
-        newNo.prox = this.prim;
-        this.prim = newNo;
-    }
-
-    addFirstFilho(Nome, Idade, Filho){
-        const newNo = new PessoasComFilhos(Nome, Idade, Filho);
-        newNo.prox = this.prim;
-        this.prim = newNo;
-    }
-
-    addLast(Nome, Idade) {
-        const newNo = new Pessoas(Nome, Idade);
-        if(!this.prim){
-            this.prim = newNo
-        }else{
-            let current = this.prim;
-            while (current.prox) {
-                current = current.prox
-            }
-            current.prox = newNo
-        }
-    }
     
-    addLastFilho(Nome, Idade, Filho) {
-        const newNo = new PessoasComFilhos(Nome, Idade, Filho);
-        if(!this.prim){
-            this.prim = newNo
+    addFirst(Nome, Idade, Filho){
+        if (!Filho){
+            Filho=null;
+        }
+        const novoNo = new Pessoa(Nome, Idade, Filho);
+        novoNo.proximo = this.cabeca;
+        this.cabeca = novoNo;
+    }
+  
+    
+    addLast(Nome, Idade, Filho) {
+        if (!Filho){
+            Filho=null;
+        }
+        const novoNo = new Pessoa(Nome, Idade, Filho);
+         if(!this.cabeca){
+            this.cabeca = novoNo
         }else{
-            let current = this.prim;
-            while (current.prox) {
-                current = current.prox
+            let atual = this.cabeca;
+            while (atual.proximo) {
+                atual = atual.proximo
             }
-            current.prox = newNo
+            atual.proximo = novoNo
         }
     }
 
+    
     removeFisrt(){
-        if(!this.prim){
+        if(!this.cabeca){
             return null;
         }
-        const removedNo = this.prim;
-        this.prim = this.prim.prox;
-        removedNo.prox = null;
+        const removedNo = this.cabeca;
+        this.cabeca = this.cabeca.proximo;
+        removedNo.proximo = null;
         return removedNo.Nome;
     }
+
     
     removeLast(){
-        if(!this.prim){
+        if(!this.cabeca){
             return null;
         } 
-        if(!this.prim.prox){
-            const removedNo2 = this.prim;
-            this.prim = null;
+        if(!this.cabeca.proximo){
+            const removedNo2 = this.cabeca;
+            this.cabeca = null;
             return removedNo2.Nome;
         }
-        let current = this.prim;
-        let previous = null;
-        while(current.prox){
-            previous = current;
-            current = current.prox;
+        let atual = this.cabeca;
+        let anterior = null;
+        while(atual.proximo){
+            anterior = atual;
+            atual = atual.proximo;
         }
-        previous.prox = null;
-        return current.Nome;
+        anterior.proximo = null;
+        return atual.Nome;
     }
 
+
     search(Nome){
-        let current = this.prim;
-        while(current){
-            if(current.Nome === Nome){
-                return current;
+        let atual = this.cabeca;
+        while(atual){
+            if(atual.Nome === Nome){
+                return atual;
             }
-            current = current.prox;
+            atual = atual.proximo;
         }
         return null;
     }
 
+
     size(){
-        let count = 0;
-        let current = this.prim;
-        while(current){
-            count++;
-            current = current.prox;
+        let cont = 0;
+        let atual = this.cabeca;
+        while(atual){
+            cont++;
+            atual = atual.proximo;
         }
-        return count;
+        return cont;
     }
 
 }
-//pra listar teria que ter um metodo para passar por todos os objetos e ir fazendo o console.log
+//Não impresso por necessitar de método próprio
