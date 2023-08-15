@@ -24,11 +24,9 @@ function somatorio(n) {
   Escreva uma função chamada fibonacci que receba um número n como parâmetro e retorne o n-ésimo termo 
   da sequência de Fibonacci. Lembre-se de implementar essa função de forma recursiva
   */
-//const leitor = require('readline-sync')
+const leitura = require('readline-sync')
 
-//let pos = question('Digite um numero')
-
-let leitor=6
+let leitor = leitura.question('Digite um numero ')
 
   function fibonaci(n){
     if (n==0){
