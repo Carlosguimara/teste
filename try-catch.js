@@ -46,10 +46,10 @@ const pessoa={ nome: leitor.question('Digite o nome '),
               idade: leitor.questionInt('Digite a idade ')}
 
 try {
-  console.log(cliente.salario);
+  //console.log(pessoa.nome); // correto 0 nome do objeto é pessoa
+  console.log(cliente.nome); // Errado, o objeto cliente não está denido
+  console.log(`${pessoa.nome}, ${pessoa.idade} anos`);
 } catch (error) {
-  console.log("[Erro]");
+  console.log("[Erro]");//
   console.log(error.message); 
 }
-
-console.log(`${pessoa.nome}, ${pessoa.idade} anos`);
