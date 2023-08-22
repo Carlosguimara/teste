@@ -48,4 +48,4 @@ Digite o nome, ou enter para encerrar
   { idade: 30, salario: '300.00', diploma: true }
 ]
 
-*/    )
+*/    
