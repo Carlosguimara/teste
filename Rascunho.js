@@ -1,55 +1,51 @@
-/*
-1- Crie um programa que recebe do teclado um número e tenta dividir por zero dentro 
-de um bloco try...catch. Capture o erro e o exiba "Erro: Divisão por zero" no console.
-*/
-/*
 const leitor = require('readline-sync')
+var ind=0, nome='*', pessoa = []
 
-let num=leitor.questionInt('Digite o numerador da divisão ')
-
-try {
- 
-  if (num === 0) {
-    throw "Valor negado"
-  } else { console.log(`10 dividido por ${num} = ${10/num}`)
-     }
-} catch (erro) {
-     console.log(`"Erro:", divisão por 0 no console`)
-} 
-*/
-
-/*
-2- Crie um programa que recebe do teclado uma string não numérica em um número utilizando 
-parseInt dentro de um bloco try...catch. Capture o erro e o exiba "Erro: Conversão inválida" no console.
-*/
-/*
-const leitor = require('readline-sync')
-
-let texto=leitor.question('Digite uma letra ou frase ')
-
-try {
-    let texto=parseInt(texto)
-} catch (erro) {
-     console.log(`"Erro: Conversão inválida" no console`)
-} 
-console.log(texto)
-*/
-
-/*
-3-Crie um programa que recebe do teclado um objeto e tente acessar uma propriedade inexistente desse 
-objeto dentro de um bloco try...catch. Capture o erro e o exiba "Erro: Propriedade não encontrada" no console.
-*/
-
-const leitor = require('readline-sync')
-
-const pessoa={ nome: leitor.question('Digite o nome '),
-              idade: leitor.questionInt('Digite a idade ')}
-
-try {
-  console.log(cliente.salario);
-} catch (error) {
-  console.log("[Erro]");
-  console.log(error.message); 
+while (nome!=""){
+    pessoa[ind]={ nome: leitor.question('Digite o nome, ou enter para encerrar ')}
+    if (pessoa[ind].nome !=""){
+        pessoa[ind]={ idade: leitor.questionInt('Digite a idade '),
+                      salario: leitor.questionInt("Digite o salário sem centavos ").toFixed(2),
+                      diploma: leitor.question("É diplomado ? (Digite Sim, ou enter para NÃO) ").toUpperCase()}
+        if (pessoa[ind].diploma=='SIM'){
+            pessoa[ind].diploma=true
+        }   else {
+                pessoa[ind].diploma=false
+             }   
+      } else {
+          pessoa.pop()
+          break
+        }
+    nome=pessoa[ind].nome
+    ind = ind+1
 }
+console.log(pessoa)
 
-console.log(`${pessoa.nome}, ${pessoa.idade} anos`);
+
+/* console (teste de execução)
+
+Digite o nome, ou enter para encerrar carlos
+Digite a idade 10
+Digite o salário sem centavos 100
+É diplomado ? (Digite Sim, ou enter para NÃO) sim
+Digite o nome, ou enter para encerrar maria
+Digite a idade 15
+Digite o salário sem centavos 150
+É diplomado ? (Digite Sim, ou enter para NÃO) 
+Digite o nome, ou enter para encerrar joao
+Digite a idade 20
+Digite o salário sem centavos 200
+É diplomado ? (Digite Sim, ou enter para NÃO) nao
+Digite o nome, ou enter para encerrar josefa
+Digite a idade 30
+Digite o salário sem centavos 300
+É diplomado ? (Digite Sim, ou enter para NÃO) sim
+Digite o nome, ou enter para encerrar 
+[
+  { idade: 10, salario: '100.00', diploma: true },
+  { idade: 15, salario: '150.00', diploma: false },
+  { idade: 20, salario: '200.00', diploma: false },
+  { idade: 30, salario: '300.00', diploma: true }
+]
+
+*/    )
