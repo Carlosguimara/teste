@@ -4,7 +4,15 @@
 /*
 const numeros = [3, 7, 2, 9, 5]
 
-for (let i = 0; i < numeros.length; i++) {
+for (i=0; i<numeros.length; i++) {
+  console.log(numeros[i]);
+}
+
+//ou então
+
+const numeros = [3, 7, 2, 9, 5]
+
+for (i in numeros) {
   console.log(numeros[i]);
 }
 */
@@ -18,6 +26,14 @@ for (let i = 0; i < numeros.length; i++) {
 const codigos = [{a: 10, b: 20, c: 30, d: 40}]
 
 for (let item in codigos) {
+  console.log(codigos[item].a+codigos[item].b+codigos[item].c+codigos[item].d);
+}
+
+//ou então
+
+const codigos = [{a: 10, b: 20, c: 30, d: 40}]
+
+for (item=0; item<codigos.length; item++) {
   console.log(codigos[item].a+codigos[item].b+codigos[item].c+codigos[item].d);
 }
 */
@@ -38,6 +54,18 @@ for (let i = 0; i < numeros.length; i++) {
     }
 }
 console.log(pares)
+
+//ou então
+
+const numeros = [12, 5, 8, 21, 16, 7], pares = []
+
+for ( i in numeros) {
+  let resto=numeros[i]%2
+    if (resto==0){
+       pares.push(numeros[i])
+    }
+}
+console.log(pares)
 */
 
 
@@ -49,6 +77,14 @@ console.log(pares)
 /*
 const estudantes = [{nome: "alice", idade: 18}, {nome: "bob", idade: 20}, {nome: "carol", idade: 19}, {nome: "david", idade: 21}];
 
+for (item=0; item<estudantes.length; item++) {
+    if (estudantes[item].idade==19)
+        console.log(`${estudantes[item].nome} tem ${estudantes[item].idade} anos`)
+}
+
+//ou então
+
+const estudantes = [{nome: "alice", idade: 18}, {nome: "bob", idade: 20}, {nome: "carol", idade: 19}, {nome: "david", idade: 21}];
 
 for (let item of estudantes) {
     if (item.idade==19)
@@ -57,18 +93,6 @@ for (let item of estudantes) {
 }
 */
 
-
-/*
-5-Imagine que você tem uma matriz bidimensional representando uma grade de   
-  pontos: const estudantes = [{nome: "alice", idade: 18}, {nome: "bob", idade: 20}, {nome: "carol", idade: 19}, {nome: "david", idade: 21}];
-
-
-for (let item of estudantes) {
-    if (item.idade==19)
-        console.log(`${item.nome} tem ${item.idade} anos`)
- 
-}
-*/
 
 
 /*
@@ -76,18 +100,34 @@ for (let item of estudantes) {
   de pontos: const pontos = [ [2, 5, 8], [3, 9, 12], [4, 6, 10] ]; Utilize dois loops "for" aninhados 
 para calcular a soma de todos os elementos da matriz e exibir o resultado.
   */
-
+/*
 const pontos = [ [2, 5, 8], [3, 9, 12], [4, 6, 10] ];
 
 function somaMatriz(matriz){
     let soma=0
-    for (let x=0; x < pontos.length; x++) {
-        for(let y=0; y < pontos[x].length; y++){
-            soma=soma+pontos[x][y]
+    for (let x=0; x < matriz.length; x++) {
+        for(let y=0; y < matriz[x].length; y++){
+            soma=soma+matriz[x][y]
        }
      }
      console.log(soma)
 }
 somaMatriz(pontos)
 
+//ou então
+
+const pontos = [ [2, 5, 8], [3, 9, 12], [4, 6, 10] ];
+
+function somaMatriz(matriz){
+    let soma=0
+    for (x in matriz) {
+        for(y in matriz[x]){
+            soma=soma+matriz[x][y]
+       }
+     }
+     console.log(soma)
+}
+somaMatriz(pontos)
+
+*/
 
