@@ -1,51 +1,85 @@
-const leitor = require('readline-sync')
-var ind=0, nome='*', pessoa = []
 
-while (nome!=""){
-    pessoa[ind]={ nome: leitor.question('Digite o nome, ou enter para encerrar ')}
-    if (pessoa[ind].nome !=""){
-        pessoa[ind]={ idade: leitor.questionInt('Digite a idade '),
-                      salario: leitor.questionInt("Digite o salário sem centavos ").toFixed(2),
-                      diploma: leitor.question("É diplomado ? (Digite Sim, ou enter para NÃO) ").toUpperCase()}
-        if (pessoa[ind].diploma=='SIM'){
-            pessoa[ind].diploma=true
-        }   else {
-                pessoa[ind].diploma=false
-             }   
-      } else {
-          pessoa.pop()
-          break
-        }
-    nome=pessoa[ind].nome
-    ind = ind+1
-}
+/*
+//1-Como você cria um objeto vazio em JavaScript?
+let pessoa={}
 console.log(pessoa)
+*/
 
+/*
+//2-Como você adiciona a propriedade "nome" com o valor "João" a um objeto chamado "pessoa"?
 
-/* console (teste de execução)
+pessoa.nome='João'
+console.log(pessoa)
+*/
 
-Digite o nome, ou enter para encerrar carlos
-Digite a idade 10
-Digite o salário sem centavos 100
-É diplomado ? (Digite Sim, ou enter para NÃO) sim
-Digite o nome, ou enter para encerrar maria
-Digite a idade 15
-Digite o salário sem centavos 150
-É diplomado ? (Digite Sim, ou enter para NÃO) 
-Digite o nome, ou enter para encerrar joao
-Digite a idade 20
-Digite o salário sem centavos 200
-É diplomado ? (Digite Sim, ou enter para NÃO) nao
-Digite o nome, ou enter para encerrar josefa
-Digite a idade 30
-Digite o salário sem centavos 300
-É diplomado ? (Digite Sim, ou enter para NÃO) sim
-Digite o nome, ou enter para encerrar 
-[
-  { idade: 10, salario: '100.00', diploma: true },
-  { idade: 15, salario: '150.00', diploma: false },
-  { idade: 20, salario: '200.00', diploma: false },
-  { idade: 30, salario: '300.00', diploma: true }
-]
+/*
+//3-Como você acessa o valor da propriedade "idade" de um objeto chamado "usuario"?
 
-*/    
+let usuario= { nome: 'João',
+            idade: 20}
+console.log(usuario.idade)
+*/
+
+/*
+//4-Suponha que você tenha um objeto "produto" com a propriedade "preco" definida como 50. 
+//  Como você altera o valor dessa propriedade para 75?
+
+let produto= { preco: 50}
+console.log(produto.preco)
+produto.preco=75
+console.log(produto.preco)
+*/
+
+/*
+//5-Como você remove a propriedade "email" de um objeto chamado "contato"?
+
+let usuario= { nome: 'João',
+            idade: 20}
+console.log(usuario)
+delete usuario.idade
+console.log(usuario)
+*/
+
+/*
+//6-Como você adiciona uma propriedade "endereco" com o valor "Rua A, 123" a um objeto existente chamado "usuario"?
+
+let usuario= { nome: 'João',
+            idade: 20}
+console.log(usuario)
+usuario.endereco='Rua A, 123'
+console.log(usuario)
+*/
+
+/*
+//7-Se você tem um objeto "empresa" com uma propriedade "departamentos", como você acessa o nome do primeiro departamento?
+
+let empresa={departamentos: ["dep1","dep2","dep3"]}
+console.log(empresa.departamentos[0])
+*/
+
+/*
+//8-Suponha que você tenha um objeto "aluno" com a propriedade "notas" contendo [85, 90, 78]. Como você altera a 
+//  segunda nota para 95?
+
+let aluno={notas: [85,90,78]}
+aluno.notas.splice(1,1,95)
+console.log(aluno)
+*/
+
+/*
+//9-Se você tem um objeto "dados" com uma propriedade "valores" contendo [10, 20, 30], como você remove o segundo 
+//  valor (20) desse array?
+
+let dados= {valores: [10,20,30]}
+dados.valores.splice(1,1)
+console.log(dados)
+*/
+
+/*
+//10-Como você cria um objeto com as propriedades "titulo" (com o valor "Livro") e "autor" (com o valor "Maria")?
+
+let livros= {titulo: 'livro',
+             autor: 'Maria'}
+console.log(livros)
+*/
+
