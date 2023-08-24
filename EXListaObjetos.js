@@ -74,10 +74,9 @@ dados.valores.splice(1,1)
 console.log(dados)
 */
 
-/*
+
 //10-Como você cria um objeto com as propriedades "titulo" (com o valor "Livro") e "autor" (com o valor "Maria")?
 
 let livros= {titulo: 'livro',
              autor: 'Maria'}
 console.log(livros)
-*/
