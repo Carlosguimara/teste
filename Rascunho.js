@@ -1,34 +1,31 @@
 function CALCULADORA(num1,num2,operador){
   resto=0
-  switch (operador) {
-  case 1:
+  op=operador
+  switch (op) {
+  case '+':
       resultado=num1+num2
-      op='+'
       break;
-  case 2:   
+  case '-':   
       resultado=num1-num2
-      op='-'
       break; 
-  case 3:   
+  case '*':   
       resultado=num1*num2
-      op='*'
       break;
-  case 4:
+  case '/':
       resultado=parseInt(num1/num2)
-      op='/'
       resto=num1%num2
       break;
   default:
-      resultado=0
-      op='inválida'
+      resultado='Erro'
+      op=operador+' (op inválida)'
   }
   return resultado, op, resto
 
 }
 
-operador=4;
+operador='/';
 var num1=5;
-var num2=0;
+var num2=2;
 CALCULADORA(num1,num2,operador)
 console.log(`${num1} ${op} ${num2} = ${resultado}`)
 if (resto != 0){
