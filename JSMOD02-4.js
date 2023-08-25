@@ -28,6 +28,3 @@ console.log(notas)
 let condicao= (media >= 7) ? 'Aprovado':'Reprovado' //Uso de operador ternário
 
 console.log(`1ª nota-${notas[0]} , 2ª nota-${notas[1]} , 3ª nota-${notas[0]} , Média-${media.toFixed(2)} - ${condicao}`)
-
-
-
