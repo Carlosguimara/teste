@@ -8,7 +8,7 @@ const leitor = require('readline-sync')
    Utilizar pelo menos um operador de atribuição e um operador ternario
 
    *** incorporei as 2 solicitaões acima em um único código, de forma que após a digitação da 2a nota, 
-    o programa informa ao usuário qual é a proxima nota mínima para o aluno alcanar a aprovação. 
+    o programa informa ao usuário qual é a proxima nota mínima para o aluno alcançar a aprovação. 
     Após receber a 3a nota o programa, mostra as notas digitadas, a média final e a condição do 
     aluno(aprovado ou reprovado). */
 
