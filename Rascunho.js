@@ -31,3 +31,4 @@ console.log(`${num1} ${op} ${num2} = ${resultado}`)
 if (resto != 0){
     console.log(`esta divisão não foi exata, (resto=${resto})`)
 }
+
