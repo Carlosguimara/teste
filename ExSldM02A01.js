@@ -125,3 +125,17 @@ console.log(`a soma dos primeiros ${qtd} numeros pares é ${soma} (calculado com
         }
     }
 */
+
+/*6- Uma empresa contrata um encanador a R$ 30,00 por dia. Crie um programa que solicite o número de dias 
+     trabalhados pelo encanador e imprima a quantia líquida que deverá ser paga, sabendo-se que são 
+     descontados 8% para pagamento de impostos e taxas devidas.
+
+     
+let dias= parseInt(leitor.question(`Digite o numero de dias a ser pago `))   
+
+let aliq= 8.00, valor=30.00, pagto=(valor *=dias).toFixed(2), imposto=(pagto*(aliq/100)).toFixed(2)
+
+console.log(`Valor da Diaria R$${valor.toFixed(2)}, Dias trabalhados ${dias}, Valor Bruto a receber R$${pagto}, Impostos R$${imposto}, Liquido a receber R$${(pagto-imposto).toFixed(2)}`)
+
+*/
+
