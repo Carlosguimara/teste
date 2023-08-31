@@ -1,15 +1,13 @@
 const leitor = require('readline-sync')
 
-/*9-Elabore um programa em JS para que leia três números e mostre-os em ordem crescente.
+/*9-Elabore um programa em JS para que leia três números e mostre-os em ordem crescente*/
 
-do {
-  
+let num1=parseInt(leitor.question(`Digite o 1º numero - `))
+let num2=parseFloat(leitor.question(`Digite o 2º numero - `))
+let num3=parseFloat(leitor.question(`Digite o 3º numero - `))
 
-let horasnormais= parseInt(leitor.question(`Digite o numero de Horas Normais trabalhadas no ano `))   
-let horasextras= parseInt(leitor.question(`Digite o numero de Horas Extras trabalhadas no ano `)) 
-let valorN=horasnormais*10.00
-let valorE=horasextras*15.00
-let valoranual=valorN+valorE
+let numeros = [num1,num2,num3]
+numeros.sort((a,b)=> a-b)
+console.log(numeros)
 
-console.log(`Salario Anual=${valoranual}`)
 
