@@ -1,20 +1,22 @@
 const leitor = require('readline-sync')
 
-/*5-Faça um programa em Javascript que receba do usuário um número N e depois imprima os N primeiros 
-    números naturais ímpares.*/
+/*7-Faça um programa para ler um horário (hora:minuto:segundo) de início e a duração, em segundos, de uma experiência 
+    biológica. O programa deve informar o horário (hora:minuto:segundo) de término da mesma..*/
 
-let qtd= parseInt(leitor.question(`Digite a qtde desejada `))   
+let inicio= leitor.question(`Digite a hora de inicio no formato hh:mm:ss - `)
+let horain= inicio.split(":")
+//console.log(horain)
 
-let soma=0
-for (let i=1; i<=(qtd*2); i++) {
-    if (i%2!==0){
-       console.log(i)
-    }
-}
+let dura= parseInt(leitor.question(`Digite a duração da experiencia em segundos - `))
 
+let inicseg = horain[0]*3600 + horain[1]*60 + horain[2]*1
+//console.log( horain[0]*3600 , horain[1]*60 , horain[2], inicseg)
+let fimseg = inicseg+dura
+console.log(inicseg,fimseg)
 
+let hfim=Math.trunc(fimseg/3600)
+let mfim=Math.trunc((fimseg/3600-hfim)*60)
+let sfim=((((fimseg/3600-hfim)*60)-mfim)*60).toFixed(0)
 
-
-
-
-    
+let fim =(`${hfim}:${mfim}:${sfim}`)
+console.log(fim) 
