@@ -1,7 +1,7 @@
 const leitor = require('readline-sync')
 
-/*7-Faça um programa para ler um horário (hora:minuto:segundo) de início e a duração, em segundos, de uma experiência 
-    biológica. O programa deve informar o horário (hora:minuto:segundo) de término da mesma..*/
+/*8-Uma empresa paga R$ 10,00 por hora normal trabalhada e R$ 15,00 por hora extra. Escreva um programa que leia o total de horas normais 
+e o total de horas extras trabalhadas por um empregado em um ano e calcule o salário anual deste trabalhador.
 
 let inicio= leitor.question(`Digite a hora de inicio no formato hh:mm:ss - `)
 let horain= inicio.split(":")
