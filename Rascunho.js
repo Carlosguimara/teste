@@ -26,6 +26,7 @@ console.log(`1 - Listar todos os alunos`)
 console.log(`2 - Incluir novo aluno`)
 console.log(`3 - Buscar um aluno pela matricula`)
 console.log("4 - Alterar um aluno");
+console.log("5 - Remover um aluno");
 console.log()
 console.log(`****************************`)
 console.log()
@@ -111,7 +112,26 @@ switch(opc){
          };
      }
      if (!achou1) {
-         console.log(`Matricula ${buscar1} não encontrada`) 
+         console.log(`Matricula ${alter} não encontrada`) 
+     }      
+     leitor.keyInPause()
+     console.clear()  
+     continue;
+     case 5:
+      let deletar = leitor.questionInt(`Digite a Matricula do Aluno a ser deletado: `)
+      let achou2 = false
+      for (const a of alunos){
+         console.clear()
+         if (a.matricula==deletar){
+           achou2 = true
+           let pos = a
+           let posi = alunos.indexOf(pos)
+           console.log(a.nome, ' deletado');
+           alunos.splice(posi, 1)
+         };
+     }
+     if (!achou2) {
+         console.log(`Matricula ${deletar} não encontrada`) 
      }      
      leitor.keyInPause()
      console.clear()  
