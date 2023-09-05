@@ -25,13 +25,14 @@ console.log(`0 - Sair do sistema`)
 console.log(`1 - Listar todos os alunos`)
 console.log(`2 - Incluir novo aluno`)
 console.log(`3 - Buscar um aluno pela matricula`)
+console.log("4 - Alterar um aluno");
 console.log()
 console.log(`****************************`)
 console.log()
 
-//do {
-    opc=parseInt(leitor.question(`Digite a opção desejada - `))
-    switch(opc){
+opc=parseInt(leitor.question(`Digite a opção desejada - `))
+
+switch(opc){
      case 1:
           console.clear()
           console.log(`listando todos os alunos`)
@@ -70,7 +71,7 @@ console.log()
          leitor.keyInPause() 
          console.clear()
          break;
-      case 3:
+     case 3:
          let buscar = leitor.questionInt(`Digite a Matricula do Aluno}: `)
          let soma=0
          let media=0.0
@@ -94,6 +95,27 @@ console.log()
         leitor.keyInPause()
         console.clear()  
         continue;
+     case 4:
+      let alter = leitor.questionInt(`Digite a Matricula do Aluno a ser alterado: `)
+      let achou1 = false
+      for (const a of alunos){
+         console.clear()
+         if (a.matricula==alter){
+           achou1 = true
+           console.log(a);
+           a.nome = leitor.question("Digite o nome do aluno: ");  
+           for (let i = 0; i < a.notas.length; i++) {
+            a.notas[i] = leitor.questionFloat(`Digite a nota ${i + 1}: `)
+             }
+         console.log(a)
+         };
+     }
+     if (!achou1) {
+         console.log(`Matricula ${buscar1} não encontrada`) 
+     }      
+     leitor.keyInPause()
+     console.clear()  
+     continue;
      case 0:
          console.log()
          console.log(`saindo...`);
