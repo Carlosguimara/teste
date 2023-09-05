@@ -1,4 +1,6 @@
 const leitor = require('readline-sync')
+const clear = require('clear')
+
 const aluno1 = {
     matricula: 1,
     nome: "Carlos",
@@ -13,6 +15,9 @@ const aluno2 = {
 
 const alunos= [aluno1,aluno2]
 let mat=2
+let opc=0
+do{
+
 console.log(`**** Cadastro de Alunos ****`)
 console.log(`*********** MENU ***********`)
 console.log()
@@ -23,12 +28,12 @@ console.log(`3 - Buscar um aluno pela matricula`)
 console.log()
 console.log(`****************************`)
 console.log()
-let opc=0
-do {
+
+//do {
     opc=parseInt(leitor.question(`Digite a opção desejada - `))
     switch(opc){
      case 1:
-          console.log()
+          console.clear()
           console.log(`listando todos os alunos`)
           console.log(`************************`)
           
@@ -44,10 +49,12 @@ do {
             media=soma/(3)
             console.log(`\t- Media=${media.toFixed(1)}`) 
           }
-          console.log()
+          leitor.keyInPause()
+          console.clear() 
           continue;
      case 2:
         mat= mat=mat+1
+         console.clear()
          let nomeAluno = leitor.question(`Digite o nome do aluno: `)
          let nota=[]
          for (n=0; n<3; n++){
@@ -59,6 +66,9 @@ do {
             notas: nota
          }
          alunos.push(aluno1)
+         console.log('Registro ',alunos[alunos.length-1],' incluído com sucesso')
+         leitor.keyInPause() 
+         console.clear()
          break;
       case 3:
          let buscar = leitor.questionInt(`Digite a Matricula do Aluno}: `)
@@ -66,9 +76,9 @@ do {
          let media=0.0
          let achou = false
          for (const a of alunos){
-            console.log(a.matricula, buscar)
+            console.clear()
             if (a.matricula==buscar){
-              achou = true  
+              achou = true
               console.log(`Nome: ${a.nome}, Matricula: ${a.matricula}`);
               for (let i = 0; i < a.notas.length; i++) {
                 console.log(`\t- Nota ${i+1} = ${a.notas[i]}`)
@@ -81,7 +91,9 @@ do {
         if (!achou) {
             console.log(`Matricula ${buscar} não encontrada`) 
         }      
-          continue;
+        leitor.keyInPause()
+        console.clear()  
+        continue;
      case 0:
          console.log()
          console.log(`saindo...`);
@@ -90,7 +102,8 @@ do {
      default:
             console.log()
             console.log(`opção inválida`)
-            console.log()
+            leitor.keyInPause()
+            console.clear()
             continue;
     }
     } while (opc!='0');
