@@ -67,7 +67,3 @@ noteb1.tampa("open")
 noteb1.ligar()
 noteb1.desligar()
 noteb1.tampa("close")
-
-
-
-
