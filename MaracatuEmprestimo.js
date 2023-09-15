@@ -79,7 +79,7 @@ while (continuar) {
 
         case 2:
             let devolver = readline.questionInt(`Digite o numero do empréstimo: `)
-            for (i=bancoDeEmprestimos.length-1; i>= -1; i--){
+            for (i=bancoDeEmprestimos.length-1; i>= -1; --i){
                 if (i < 0){
                     console.log(`Numero de empréstimo inválido`)
                     break
@@ -105,6 +105,7 @@ while (continuar) {
                 }
                 if (bancoDeEmprestimos[i].NumeroEmprestimo==emprest){
                     console.log(bancoDeEmprestimos[i])
+                    break
                     }
             }
                 continue
@@ -118,6 +119,7 @@ while (continuar) {
                 }
                 if (bancoDeEmprestimos[i].idInstrumento==localizar){
                     console.log(bancoDeEmprestimos[i])
+                    break
                     }
             }
                 continue
