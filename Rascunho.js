@@ -1,5 +1,5 @@
 const readline = require("readline-sync")
-const clear = require('clear')
+//const clear = require('clear')
 let bancoDeEmprestimos = []
 let idEmprestimoAnterior=0
 
@@ -49,11 +49,11 @@ function EmpEmprestar(IdEmprestimoAnterior){
         console.log(`Numero sequencial do empréstimo; ${idEmprestimo}`)
         const novoemprestimo = new emprestimo(idEmprestimo,idInstrumento,idAluno,evento,dataEmprestimo);
         bancoDeEmprestimos.push(novoemprestimo)
-        IdEmprestimoAnterior=novoemprestimo.idEmprestimo
+        idEmprestimoAnterior=novoemprestimo.idEmprestimo
         break
     }
-    
-    return status
+    retorno=[status,idEmprestimoAnterior]
+    return retorno
 }
 
 function EmpDevolver(){
@@ -101,4 +101,61 @@ function EmpBuscarUltimoEmprestimoDoInstrumento(){
             break
             }
     }
+}
+
+let continuar = true
+let unlock=false
+// MENU INICIAL
+while (continuar) {
+    if (unlock) {
+        readline.keyInPause()
+        console.clear()
+    } else{
+        console.clear()
+        unlock=true
+    }
+	console.log('*** REGISTRO DE EMPRESTIMO DE INSTRUMENTO ***');
+	console.log('OPÇÃO:');
+	console.log('1. Emprestar Instrumento');
+	console.log('2. Devolver Instrumento');
+	console.log('3. Listar Emprestimo');
+    console.log('4. Localizar Instrumento')
+	console.log('0. Sair');
+	console.log('**********************************************');
+	const opcao = readline.questionInt('Escolha uma opção: ');
+
+	switch (opcao) {
+		case 1:
+	        retorno=EmpEmprestar(idEmprestimoAnterior)
+	        let status=retorno[0]
+	        let novoIdEmp=retorno[1]
+	        
+            if (status=="ok"){
+                idEmprestimoAnterior=novoIdEmp
+            }else {
+                console.log(`Empréstimo não efetuado`)
+            }
+            continue    
+
+        case 2:
+            EmpDevolver()
+            continue
+		
+        case 3:
+            EmpBuscarEmprestimo()
+            continue
+    
+        case 4:
+            EmpBuscarUltimoEmprestimoDoInstrumento()
+            continue
+		
+		case 0:
+			console.log(`Encerrando o programa`);
+            continuar = false
+			break;
+		
+		default:
+			console.log('Opção inválida. Por favor, escolha uma opção válida.');
+			break;
+	}
 }
