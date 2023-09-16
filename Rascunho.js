@@ -1,20 +1,20 @@
 const readline = require("readline-sync")
 const clear = require('clear')
 let bancoDeEmprestimos = []
-let sequencial=0
+let idEmprestimoAnterior=0
 
 class emprestimo {
     constructor (sequencial,idInstrumento,idAluno,evento,dataEmprestimo) {
-        this.idEmprestimo=
-        this.idInstrumento
-        this.idAluno
-        this.evento
-        this.dataEmprestimo
+        this.idEmprestimo = sequencial
+        this.idInstrumento = idInstrumento
+        this.idAluno = idAluno
+        this.evento = evento
+        this.dataEmprestimo = dataEmprestimo
         this.dataDevolucao = null
     }
 }
 
-function EmpEmprestar(IdEmprestimoAnt){
+function EmpEmprestar(IdEmprestimoAnterior){
     let status="ok"
     while (true) {
         let idInstrumento = readline.questionInt(`Digite o numero do Instrumento, 0 para desistir: `)
@@ -47,12 +47,16 @@ function EmpEmprestar(IdEmprestimoAnt){
         let idEmprestimo = idEmprestimoAnterior+1
         console.log(`Instrumento liberado para empréstimo em ${dataEmprestimo}`)
         console.log(`Numero sequencial do empréstimo; ${idEmprestimo}`)
+        const novoemprestimo = new emprestimo(idEmprestimo,idInstrumento,idAluno,evento,dataEmprestimo);
+        bancoDeEmprestimos.push(novoemprestimo)
+        IdEmprestimoAnterior=novoemprestimo.idEmprestimo
         break
     }
-    return status, idEmprestimo, idInstrumento, idAluno, evento, dataEmprestimo
+    
+    return status
 }
 
-function EmpDevolver(idEmprestimo){
+function EmpDevolver(){
     let devolver = readline.questionInt(`Digite o numero do empréstimo: `)
     for (i=bancoDeEmprestimos.length-1; i>= -1; --i){
         if (i < 0){
@@ -69,5 +73,32 @@ function EmpDevolver(idEmprestimo){
             break
         }
     }
-    continue
+}
+
+function EmpBuscarEmprestimo(){
+    let emprest = readline.questionInt(`Digite o numero do empréstimo: `)
+    for (i=bancoDeEmprestimos.length-1; i>=-1; i--){
+        if (i < 0){
+            console.log(`Numero de empréstimo inválido`)
+            break
+        }
+        if (bancoDeEmprestimos[i].idEmprestimo==emprest){
+            console.log(bancoDeEmprestimos[i])
+            break
+            }
+    }
+}
+
+function EmpBuscarUltimoEmprestimoDoInstrumento(){
+    let localizar = readline.questionInt(`Digite o numero do instrumento à localizar: `)
+    for (i=bancoDeEmprestimos.length-1; i>=-1; i--){
+        if (i < 0){
+            console.log(`Instrumento não Localizado`)
+            break
+        }
+        if (bancoDeEmprestimos[i].idInstrumento==localizar){
+            console.log(bancoDeEmprestimos[i])
+            break
+            }
+    }
 }
