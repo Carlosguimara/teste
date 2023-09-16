@@ -16,7 +16,7 @@ const al3 = new aluno(3,"Rebeca")
 const al4 = new aluno(4,"Francis")
 const al5 = new aluno(10,"Waldeck")
 
-bancoDeAlunos = [al1,al2,al3,al4,al5]
+let bancoDeAlunos = [al1,al2,al3,al4,al5]
 
 
 class instrumento {
@@ -37,7 +37,7 @@ const inst4 = new instrumento(4,"Caixa","liudhknwxkkhdaxkxmbwdjh",true,false)
 const inst5 = new instrumento(5,"Timbau","podhpdbjgol   dlb gdl",true,false)
 const inst6 = new instrumento(6,"Timbau","liCHI DJ  QKHCL   BDI",true,false) 
 
-bancoDeInstrumentos = [inst1,inst2,inst3,inst4,inst5,inst6]
+let bancoDeInstrumentos = [inst1,inst2,inst3,inst4,inst5,inst6]
 
 // Fim das Classes/Atributos fake - deletar
 
@@ -164,7 +164,7 @@ function EmpDevolver(){
 //                        bancoDeInstrumentos[1].emprestado=d.emprestado // ?????????????
                    }
                 }
-
+                
                 console.log(`Instrumento devolvido em ${bancoDeEmprestimos[i].dataDevolucao}`)        
             }else {
                 console.log(`Instrumento já devolvido em ${bancoDeEmprestimos[i].dataDevolucao} pelo aluno ${bancoDeEmprestimos[i].idAluno}`)
