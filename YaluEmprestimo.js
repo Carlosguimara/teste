@@ -1,47 +1,46 @@
 const readline = require("readline-sync")
 
+//**base de alunos e instrumentos criadas para teste - deletar antes de integrar ao codigo final
+                                                                                        //deletar
+class aluno {                                                                           //deletar  
+    constructor (matricula,nome){                                                       //deletar
+        this.matricula = matricula                                                      //deletar
+        this.nome = nome                                                                //deletar
+    }                                                                                   //deletar
+}                                                                                       //deletar
+                                                                                        //deletar
+const al1 = new aluno(1,"Carlos")                                                       //deletar
+const al2 = new aluno(2,"Marta")                                                        //deletar
+const al3 = new aluno(3,"Rebeca")                                                       //deletar
+const al4 = new aluno(4,"Francis")                                                      //deletar
+const al5 = new aluno(10,"Waldeck")                                                     //deletar
+                                                                                        //deletar
+let bancoDeAlunos = [al1,al2,al3,al4,al5]                                               //deletar
+                                                                                        //deletar
+class instrumento {                                                                     //deletar
+    constructor (idInstrumento,tipo,descricao,disponibilidade,emprestado){              //deletar
+        this.id = idInstrumento                                                         //deletar
+        this.tipo = tipo                                                                //deletar
+        this.descricao = descricao                                                      //deletar
+        this.dataDeAquisicao = []                                                       //deletar
+        this.disponibilidade = disponibilidade                                          //deletar
+        this.emprestado = emprestado                                                    //deletar
+    }                                                                                   //deletar
+}                                                                                       //deletar
+                                                                                        //deletar
+const inst1 = new instrumento(1,"Alfaia","hahdakhucbbxjsh",false,false)                 //deletar
+const inst2 = new instrumento(2,"Caixa","jhcuaiissnkjndknjbak",true,true)               //deletar
+const inst3 = new instrumento(3,"Agogo","jhasdbkkadbx jsjsh",true,false)                //deletar
+const inst4 = new instrumento(4,"Caixa","liudhknwxkkhdaxkxmbwdjh",true,true)            //deletar
+const inst5 = new instrumento(5,"Timbau","podhpdbjgol   dlb gdl",true,true)             //deletar
+const inst6 = new instrumento(6,"Timbau","liCHI DJ  QKHCL   BDI",true,false)            //deletar
+const inst7 = new instrumento(7,"Caixa","ihqkwineeknwcdk",true,false)                   //deletar
+const inst8 = new instrumento(8,"Agogo","ikdhkhjkhdksjwcdk",true,false)                 //deletar
+                                                                                        //deletar
+let bancoDeInstrumentos = [inst1,inst2,inst3,inst4,inst5,inst6,inst7,inst8]             //deletar
+                                                                                        //deletar
+// Fim das Classes/Atributos fake                                                       //deletar
 
-// base de alunos e instrumentos criadas para teste- deletar antes de integrar ao codigo final
-
-class aluno {
-    constructor (matricula,nome){
-        this.matricula = matricula
-        this.nome = nome
-    }
-} 
-
-const al1 = new aluno(1,"Carlos")
-const al2 = new aluno(2,"Marta")
-const al3 = new aluno(3,"Rebeca") 
-const al4 = new aluno(4,"Francis")
-const al5 = new aluno(10,"Waldeck")
-
-let bancoDeAlunos = [al1,al2,al3,al4,al5]
-
-
-class instrumento {
-    constructor (idInstrumento,tipo,descricao,disponibilidade,emprestado){
-        this.id = idInstrumento
-        this.tipo = tipo
-        this.descricao = descricao
-        this.dataDeAquisicao = []
-        this.disponibilidade = disponibilidade
-        this.emprestado = emprestado
-    }
-} 
-
-const inst1 = new instrumento(1,"Alfaia","hahdakhucbbxjsh",false,false)
-const inst2 = new instrumento(2,"Caixa","jhcuaiissnkjndknjbak",true,true)
-const inst3 = new instrumento(3,"Agogo","jhasdbkkadbx jsjsh",true,false)
-const inst4 = new instrumento(4,"Caixa","liudhknwxkkhdaxkxmbwdjh",true,true)
-const inst5 = new instrumento(5,"Tibau","podhpdbjgol   dlb gdl",true,true)
-const inst6 = new instrumento(6,"Tibau","liCHI DJ  QKHCL   BDI",true,false) 
-const inst7 = new instrumento(7,"Caixa","ihqkwineeknwcdk",true,false) 
-const inst8 = new instrumento(8,"Agogo","ikdhkhjkhdksjwcdk",true,false)
-
-let bancoDeInstrumentos = [inst1,inst2,inst3,inst4,inst5,inst6,inst7,inst8]
-
-// Fim das Classes/Atributos fake - deletar
 
 class emprestimo {
     constructor (sequencial,idInstrumento,idAluno,evento,dataEmprestimo) {
@@ -54,15 +53,16 @@ class emprestimo {
     }
 }
 
-
 const emp1 = new emprestimo(1,2,3,"Sala 101","2023-09-13T11:09:02.589Z")
-const emp2 = new emprestimo(2,4,4,"Sala 102","2023-09-13T13:25:18.589Z)")
-const emp3 = new emprestimo(3,5,1,"Praça do Arsenal","2023-09-15T08:35:45.589Z")
+const emp2 = new emprestimo(2,4,4,"Sala 102","2023-09-13T13:25:18.679Z")
+const emp3 = new emprestimo(3,5,1,"Praça do Arsenal","2023-09-15T08:35:45.125Z")
 
 let bancoDeEmprestimos = [emp1,emp2,emp3]
 let idEmprestimoAnterior=3
 
-// Funçoes gerais
+// Funçoes ***********************************************************
+
+//********************************************************************
 function EmpEmprestar(IdEmprestimoAnterior){
     let status="ok"
     while (true) {
@@ -161,6 +161,7 @@ function EmpEmprestar(IdEmprestimoAnterior){
     return retorno
 }
 
+//********************************************************************
 function EmpDevolver(){
     let devolver = readline.questionInt(`Digite o numero do empréstimo: `)
     for (i=bancoDeEmprestimos.length-1; i>= -1; --i){
@@ -191,6 +192,7 @@ function EmpDevolver(){
     }
 }
 
+//********************************************************************
 function EmpBuscarEmprestimo(){
     let emprest = readline.questionInt(`Digite o numero do empréstimo: `)
     for (i=bancoDeEmprestimos.length-1; i>=-1; i--){
@@ -205,6 +207,7 @@ function EmpBuscarEmprestimo(){
     }
 }
 
+//********************************************************************
 function EmpBuscarUltimoEmprestimoDoInstrumento(){
     let localizar = readline.questionInt(`Digite o numero do instrumento à localizar: `)
     for (i=bancoDeEmprestimos.length-1; i>=-1; i--){
@@ -219,6 +222,7 @@ function EmpBuscarUltimoEmprestimoDoInstrumento(){
     }
 }
 
+//********************************************************************
 function EmpListarEmprestimosDoInstrumento(){
     let devolvido=""
     let localizar = readline.questionInt(`Digite o numero do instrumento: `)
@@ -240,27 +244,40 @@ function EmpListarEmprestimosDoInstrumento(){
     }
 
 }
+
+//**********************************************************
 function EmpListarEmprestimosEmAberto(){
     let emAberto=false
     for (const a of bancoDeEmprestimos){
-        if (a.dataDevolucao !== null){
-            emAberto = true
-            console.log(`Empréstimo Nº: ${bancoDeEmprestimos[i].idEmprestimo} - Matricula do Aluno: ${bancoDeEmprestimos[i].idAluno} - Em aberto desde: ${bancoDeEmprestimos[i].dataEmprestimo}`)
-        }
-    }
-    if (!emAberto){
-        break
-    }
-
+       if (a.dataDevolucao == null){
+           emAberto = true
+           console.log(`Empréstimo Nº: ${a.idEmprestimo} - Matricula do Aluno: ${a.idAluno} - Instrumento Nº: ${a.idInstrumento} - Em aberto desde: ${a.dataEmprestimo}`)
+       }
+   }
+   if (emAberto == false){
+       console.log(`Nao existem empréstimo em aberto`)
+   }
 }
 
+//********************************************************************
+function  EmpListarInstrumentosDisponiveis() {
+    let emAberto=false
+     for (const a of bancoDeInstrumentos){
+        if (a.disponibilidade == true & a.emprestado == false){
+            emAberto = true
+            console.log(`Instrumento Nº: ${a.id} - Tipo: ${a.tipo} - Descriçao: ${a.descricao}`)
+        }
+    }
+    if (emAberto == false){
+        console.log(`No momento nao existem instrumentos disponíveis para empréstimo, volte mais tarde.`)
+    }
+}
 
+//MENU EMPRÉSTIMOS **************************************************
 
 let continuar = true
 let unlock=false
 
-
-// CRUD - MENU INICIAL
 while (continuar) {
     if (unlock) {
         readline.keyInPause()
@@ -320,7 +337,6 @@ while (continuar) {
              EmpListarInstrumentosDisponiveis()
              continue
    
-
 		case 0:
 			console.log(`Encerrando o programa`);
             continuar = false
