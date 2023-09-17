@@ -200,8 +200,14 @@ function EmpBuscarEmprestimo(){
             console.log(`*** NÚMERO DE EMPRÉSTIMO NÃO CADASTRADO ***`)
             break
         }
+        let devolvido=""
         if (bancoDeEmprestimos[i].idEmprestimo==emprest){
-            console.log(bancoDeEmprestimos[i])
+            if (bancoDeEmprestimos[i].dataDevolucao == null){
+                devolvido="Em aberto"
+            } else {
+                devolvido=bancoDeEmprestimos[i].dataDevolucao
+            }
+            console.log(`Empréstimo Nº: ${bancoDeEmprestimos[i].idEmprestimo} - Matricula do Aluno: ${bancoDeEmprestimos[i].idAluno} - Emprestado em ${bancoDeEmprestimos[i].dataEmprestimo} - Devolvido em: ${devolvido}`)
             break
             }
     }
@@ -215,8 +221,14 @@ function EmpBuscarUltimoEmprestimoDoInstrumento(){
             console.log(`*** INSTRUMENTO AINDA NÃO FOI EMPRESTADO ***`)
             break
         }
+        let devolvido=""
         if (bancoDeEmprestimos[i].idInstrumento==localizar){
-            console.log(bancoDeEmprestimos[i])
+            if (bancoDeEmprestimos[i].dataDevolucao == null){
+                devolvido="Em aberto"
+            } else {
+                devolvido=bancoDeEmprestimos[i].dataDevolucao
+            }
+            console.log(`Empréstimo Nº: ${bancoDeEmprestimos[i].idEmprestimo} - Matricula do Aluno: ${bancoDeEmprestimos[i].idAluno} - Emprestado em ${bancoDeEmprestimos[i].dataEmprestimo} - Devolvido em: ${devolvido}`)
             break
             }
     }
