@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "clear": "^0.1.0",
-    "readline-sync": "^1.4.10"
+    "readline-sync": "^1.4.10",
+    "tsc": "^2.0.4"
   }
 }
